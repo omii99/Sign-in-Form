@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up Form</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script language="javascript" type="text/javascript">
+		function validateForm() {
+					
+   
+    if (document.forms["form1"]["fn"].value == "") {
+        alert("Firstname must be filled out");
+        return false;
+    }
+     
+    if (document.forms["form1"]["sn"].value == "") {
+        alert("SurName must be filled out");
+        return false;
+    }
+     
+    if (document.forms["form1"]["em"].value == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+    var z = document.forms["form1"]["psw"].value;
+    if (z == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+    var x = document.forms["form1"]["cpsw"].value;
+    if (x == "") {
+        alert("Password_Confirmation must be filled out");
+        return false;}
+    if(z!==x) {
+    	alert("Enter your correct Password_Confirmation");
+    	return false;
+    }  
+    
+}
+function toggle(){
+    	var tem=document.getElementById("typepass");
+    	if(tem.type=="password"){
+    		tem.type="text";
+    	}
+    	else{
+    		tem.type="password";
+    	}
+    }
+
+	</script>
+</head>
+<body background="logo2.jpg">
+	
+	
+	<div class="container" >
+		<form name="form1">
+			<div class="header"><img src="logo2.jpg" alt="logo">
+			<h1><font color="#008080" face="Monospace">Create your DAZ Account</font></h1></div>
+
+
+		<table border="0" width="100%">
+
+			<tr>
+				<td class="mt">
+					 <label for="Firstname" class="fo1"><b>Firstname</b></label>
+					<input type="textInput" placeholder="Firstname" name="fn" required>
+				</td>
+				<td class="mt">
+					 <label for="Surname" class="fo1"><b>Surname</b></label>
+					<input type="textInput" placeholder="Surname" name="sn" required>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="mt">
+					 <label for="Email" class="fo1"><b>Email</b></label>
+					<input type="textInput" placeholder="Email address" name="em" required>
+				</td>
+			<td>@daz.com</td>
+			</tr>
+			<tr>
+				<td class="mt">
+					 <label for="Password" class="fo1"><b>Password</b></label>
+					<input type="password" placeholder="password" name="psw" id="typepass" required>
+				</td>
+				<td>
+					<input type="checkbox" onclick="toggle();" style="margin-bottom:15px">Show Password
+				</td>
+			</tr><tr>
+				<td class="mt">
+					 <label for="Confirm password" class="fo1"><b>Confirm Password</b></label>
+					<input type="password" placeholder="Confirm password" name="cpsw" required>
+				</td>
+				<td><p align="right"><a href="lo2.html"    class="next" onclick="return validateForm();"  >Next &raquo;</a></p></td>
+			</tr>
+		</table>
+
+
+		
+	</form>
+	</div>
+
+
+</body>
+</html>

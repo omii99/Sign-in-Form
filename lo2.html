@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up Form</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script language="javascript" type="text/javascript">
+		function validateform2(){
+			var c=document.forms["form2"]["num"].value;
+			if(c== ""){
+				alert("Invalid Mobilenumber");
+				return false;
+			}
+			if(isNaN(c)){
+				alert("Please enter the valid Mobilenumber(Like:9400000201)");
+				
+				return false;
+			}
+
+
+			if(c.length<10){
+				alert("Please enter the valid Mobilenumber(Like:9400000201)");
+				return false;
+			}
+			var dt=document.forms["form2"]["bd"].value;
+			ifcheck=/^([0-9]{2})-([0-9]{2})-([0-9]{4})$/;
+			if(!dt.match(ifcheck)){
+				alert("Error: Date format : MM-DD-YYYY");
+				return false;
+			}
+			if (document.getElementbyId("txtarea").value=="") {
+				alert("Please Enter your Permanent Address");
+					document.getElementbyId("txtarea").focus();
+				return false;
+			}
+		}
+
+	</script>
+		
+
+</head>
+<body background="logo2.jpg">
+	<div>
+		
+		<form name="form2" >
+			<table border="0" width="100%"><tr>
+			<td  class="mt">
+				<label for="Mobilenumber" class="fo1"><b>Mobile Number</b></label>
+				<input type="textInput" placeholder="Mobilenumber" name="num" maxlength="10" required>
+			</td>
+			
+		
+			<td class="mt">
+				<label for="Birthday" class="fo1"><b>Birthday </b></label>
+				<input type="textInput" placeholder="MM-DD-YYYY" name="bd"  required>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="mt">
+				<label for="Gender" class="fo1"><b>Gender </b></label>
+				<input type="radio" name="gender" value="male" checked> Male
+  				<input type="radio" name="gender" value="female"> Female
+  				<input type="radio" name="gender" value="other"> Other 
+			</td>
+		</tr>
+		<tr>
+			<td class="mt">
+ <label for="Country" class="fo1"><b>Country </b></label>
+ <select name="country">
+<option value="">Country...</option>
+<option value="AF">Afghanistan</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FA">Falkland Islands</option>
+<option value="MI">Midway Islands</option>
+<option value="MB">St Maarten</option>
+<option value="SP">Saipan</option>
+<option value="SO">Samoa</option>
+<option value="AS">Samoa American</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome &amp; Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="OI">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="mt" colspan="2">
+			<label for="permanent Address" class="fo1"  name="zc" required><b>Permanent Address</b></label>
+			<textarea  id="txtarea" name="txtarea"  rows="5" cols="90" placeholder="Enter your Permanent Address here"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>
+		<input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">By clicking Sign up, I agree to our Terms & Data Policy</td></tr>
+		<tr><td><a href="lo.html"  class="previous" >&laquo; Previous</a></td>
+
+			<td align="right"><button type="submit" class="signupbtn"  onclick="validateform2();">Sign Up</button>
+			
+			</td>
+		</tr>
+		
+			</table> 
+			
+			
+		
+		
+			
+			
+			
+		</form>
+		
+	</div>
+
+</body>
+</html>
